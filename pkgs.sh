@@ -32,14 +32,6 @@ check_and_install_rpm() {
 
 # --- INSTALACIONES ---
 
-# Visual Studio Code (usando el repositorio de Microsoft)
-if ! command -v code &> /dev/null; then
-    echo "Instalando Visual Studio Code..."
-    sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
-    sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
-    sudo dnf install -y code
-fi
-
 # OnlyOffice Desktop Editors
 check_and_install_rpm "OnlyOffice" "onlyoffice-desktopeditors" "https://download.onlyoffice.com/install/desktop/editors/linux/onlyoffice-desktopeditors.x86_64.rpm" "onlyoffice.rpm"
 
@@ -51,14 +43,67 @@ if ! command -v obsidian &> /dev/null; then
     flatpak install -y md.obsidian.Obsidian
 fi
 
-# Discord (usando el paquete RPM oficial)
-check_and_install_rpm "Discord" "discord" "https://discord.com/api/download?platform=linux&format=rpm" "discord.rpm"
-
 # Google Chrome
 check_and_install_rpm "Google Chrome" "google-chrome" "https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm" "chrome.rpm"
+
+# Flatpak setup base
+sudo apt install -y flatpak
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
+if ! command -v planify &> /dev/null; then
+    echo "Instalando Planify via Flatpak..."
+    flatpak install -y io.github.alainm23.planify
+fi
+
+if ! command -v lonewolf &> /dev/null; then
+    echo "Instalando Lonewolf via Flatpak..."
+    flatpak install -y site.someones.Lonewolf
+fi
+
+if ! command -v thisweekinmylife &> /dev/null; then
+    echo "Instalando Thisweekinmylife via Flatpak..."
+    flatpak install -y io.github.zhrexl.thisweekinmylife
+fi
+
+if ! command -v librewolf &> /dev/null; then
+    echo "Instalando Librewolf via Flatpak..."
+    flatpak install -y io.gitlab.librewolf-community
+fi
+
+if ! command -v shortwave &> /dev/null; then
+    echo "Instalando Shortwave via Flatpak..."
+    flatpak install -y de.haeckerfelix.Shortwave
+fi
+
+if ! command -v djpdf &> /dev/null; then
+    echo "Instalando Djpdf via Flatpak..."
+    flatpak install -y com.github.unrud.djpdf
+fi
+
+if ! command -v jpeg2pdf &> /dev/null; then
+    echo "Instalando Jpeg2pdf via Flatpak..."
+    flatpak install -y com.warlordsoftwares.jpeg2pdf
+fi
+
+if ! command -v morphosis &> /dev/null; then
+    echo "Instalando Morphosis via Flatpak..."
+    flatpak install -y garden.jamie.Morphosis
+fi
+
+if ! command -v librum &> /dev/null; then
+    echo "Instalando Librum via Flatpak..."
+    flatpak install -y com.librumreader.librum
+fi
+
+if ! command -v spotify &> /dev/null; then
+    echo "Instalando Spotify via Flatpak..."
+    flatpak install -y com.spotify.Client
+fi
+
 
 # --- LIMPIEZA ---
 cd ~
 rm -rf ~/temp_apps
 
 echo "✅ Todos los programas han sido verificados e instalados si era necesario."
+
