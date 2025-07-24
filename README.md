@@ -8,7 +8,7 @@ sudo dnf install -y clang llvm g++ gnome-tweaks nodejs  gcc libicu dotnet-sdk-9.
 ```
 
 ```sh
-sudo dnf install fastfetch -y
+sudo dnf install fastfetch tldr -y
 ``` 
 
 Desinstalar libreoffice
