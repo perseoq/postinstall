@@ -9,7 +9,12 @@ sudo dnf install -y clang llvm g++ gnome-tweaks nodejs  gcc libicu dotnet-sdk-9.
 
 ```sh
 sudo dnf install fastfetch tldr -y
-``` 
+```
+
+Instalacion de tesseract OCR (Todos los idiomas)
+```sh
+sudo dnf install tesseract tesseract-langpack*
+```
 
 Desinstalar libreoffice
 
