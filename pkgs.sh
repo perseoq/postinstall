@@ -55,10 +55,6 @@ if ! command -v planify &> /dev/null; then
     flatpak install -y io.github.alainm23.planify
 fi
 
-if ! command -v lonewolf &> /dev/null; then
-    echo "Instalando Lonewolf via Flatpak..."
-    flatpak install -y site.someones.Lonewolf
-fi
 
 if ! command -v thisweekinmylife &> /dev/null; then
     echo "Instalando Thisweekinmylife via Flatpak..."
