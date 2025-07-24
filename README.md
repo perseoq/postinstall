@@ -29,7 +29,7 @@ Instalar steam
 sudo dnf install steam -y
 ```
 
-Instalar paquetes básicos (office, chrome, etc)
+Instalar paquetes básicos (office, chrome, etc) [Descargar script](https://raw.githubusercontent.com/perseoq/postinstall/refs/heads/main/pkgs.sh)
 
 ```sh
 cd Descargas
