@@ -90,10 +90,6 @@ if ! command -v morphosis &> /dev/null; then
     flatpak install -y garden.jamie.Morphosis
 fi
 
-if ! command -v librum &> /dev/null; then
-    echo "Instalando Librum via Flatpak..."
-    flatpak install -y com.librumreader.librum
-fi
 
 if ! command -v spotify &> /dev/null; then
     echo "Instalando Spotify via Flatpak..."
