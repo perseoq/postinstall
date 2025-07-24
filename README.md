@@ -13,7 +13,7 @@ sudo dnf install fastfetch tldr -y
 
 Instalacion de tesseract OCR (Todos los idiomas)
 ```sh
-sudo dnf install tesseract tesseract-langpack*
+sudo dnf install tesseract tesseract-langpack* gimagereader-gtk sigil
 ```
 
 Desinstalar libreoffice
