@@ -236,3 +236,32 @@ nos mostrará:
 texto para el nuevo archivo
 nuevo texto para el archivo
 ```
+
+#### Borrar un archivo 
+
+Borrar un archivo es muy fácil, solo ponemos:
+```sh
+rm archivo.txt
+```
+
+Si quieramos borrar dos archivos dentro de una misma carpeta
+```sh
+rm archivo1.txt archivo2.txt
+```
+
+Si quisieramos borrar todos los archivo
+```sh
+rm *
+```
+
+Esta misma lógica sirve para borrar directorios, sin embargo no se te olvide poner la flag `-r` 
+
+¡OJO! si tu haces:
+```sh
+rm *
+```
+
+Pero hay un directorio dentro entonces tendrás que poner `-r`.
+
+
+
